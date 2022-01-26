@@ -1,5 +1,4 @@
 import React, { useState,useEffect } from 'react';
-import Rating from 'react-rating';
 import './Blog.css'
 const Blog = () => {
   const [blogs,setBlogs]=useState([])
@@ -15,9 +14,9 @@ const Blog = () => {
   <div className="blog-title my-5">
     <h1>Travelers <span> Experience</span></h1>
   </div>
-  <div className="row g-5">
+  <div className="row g-4">
    {blogs.map(blog=>
-   <div className="col-lg-4 text-start">
+   <div className="col-lg-4 text-start mb-3">
     <div class="card " >
    <img src={blog.img}class="card-img-top" alt="..."/>
    <div className="card-info d-flex ps-3 align-items-center">
