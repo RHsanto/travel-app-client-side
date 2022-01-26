@@ -1,0 +1,78 @@
+
+a{text-decoration: none;}
+ .top-header,  .main-header{
+  display: flex;
+  justify-content: space-between;
+}
+
+
+
+.logo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.logo a{
+  color: #FFBD30;
+}
+.menu{
+  display: flex;
+
+}
+nav{
+ margin-right: 20px;
+ padding-top: 10px;
+ 
+}
+nav ul li{
+  display: inline-block; 
+}
+nav ul li{
+  font-size: 15px;
+  padding: 15px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.navbar{
+margin-bottom: 20px;
+margin-top: 15px;
+}
+.navbar-nav li{
+  margin-bottom: 15px;
+  padding: 10px;
+  color: rgb(255, 255, 255);
+  font-weight: 600;
+}
+.navbar-nav li:hover{
+  background-color: rgb(164, 172, 172);
+  color: black;
+}
+
+.top-2 span a{
+  color: black;
+}
+
+.button{
+color: white;
+border: 0;
+margin-top: 15px;
+margin-bottom: 20px;
+border: 1px solid white;
+width: 100px;
+border-radius: 50px;
+height: 40px !important;
+}
+.button:hover{
+  color: #FFC40C;
+  border: 1px solid #FFC40C;
+}
+.loged-btn{
+  border: 0;
+  border-radius: 5px;
+  background-color: rgb(236, 22, 22);
+  color: white;
+  font-weight: 700;
+}
