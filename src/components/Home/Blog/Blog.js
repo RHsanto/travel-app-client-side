@@ -16,10 +16,12 @@ const Blog = () => {
   </div>
   <div className="row g-4">
    {blogs.map(blog=>
-   <div className="col-lg-4 text-start mb-3">
+   <div  data-aos="flip-right"
+   data-aos-duration="2000"
+    className="col-lg-4 text-start mb-3">
     <div class="card " >
    <img src={blog.img}class="card-img-top" alt="..."/>
-   <div className="card-info d-flex ps-3 align-items-center">
+   <div className="card-info text-light d-flex ps-3 align-items-center">
    <p className=' '><i class="fas fa-map-marker-alt"></i> {blog.location}</p>
     <p><small><i class="fas fa-calendar"></i> {blog.date}</small></p>
      </div>

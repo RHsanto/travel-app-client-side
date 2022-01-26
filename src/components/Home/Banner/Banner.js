@@ -18,7 +18,7 @@ const Banner = () => {
     <div class="carousel-item">
       <img src="https://setsail.qodeinteractive.com/wp-content/uploads/2018/09/h1-slider-img-1-.jpg" class="d-block w-100" alt="..."/>
       <div class="carousel-caption d-none d-md-block">
-        <h4>Let's go now</h4>
+        <h4 >Let's go now</h4>
         <h1>Explore and travel</h1>
         <p>The Travel Episodes does not just take storytelling to the next level with their writings but also with video clips, sound effects, and photography. It's like reading a futuristic storybook that teleported you to the place.</p>
       </div>
