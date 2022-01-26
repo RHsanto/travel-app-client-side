@@ -12,7 +12,7 @@ const Navigation = () => {
         <div className="logo">
           <img src="img/logo.PNG" alt=""/>
           <Link to='/' className='fs-1'>
-           Travel.
+           Travello
           </Link>
         </div>
 
