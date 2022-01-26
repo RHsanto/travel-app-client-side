@@ -1,0 +1,16 @@
+.carousel-caption{
+  top: 150px;
+}
+
+.carousel-caption h4{
+  font-size: 48px;
+  font-family: 'Satisfy', cursive;
+}
+.carousel-caption h1{
+  font-size: 120px;
+}
+.carousel-caption p{
+  font-size: 18px;
+  width: 50%;
+  margin: 0 auto;
+}
