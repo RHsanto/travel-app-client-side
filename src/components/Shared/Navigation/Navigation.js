@@ -27,6 +27,9 @@ const Navigation = () => {
               <NavLink  style={isActive => ({
                color: isActive ? "#31D2F2" : "black"
                })}  to='/blog'><li>Blog</li></NavLink>
+              <NavLink  style={isActive => ({
+               color: isActive ? "#31D2F2" : "black"
+               })}  to='/addExperince'><li>Add Experience</li></NavLink>
              
             </ul>
           </nav>

@@ -30,7 +30,7 @@ import AllOrders from './AllOrders/AllOrders';
 const drawerWidth = 240;
 
 function Dashboard(props) {
-  const {user,logOut,admin}= useAuth();
+  const {user,admin}= useAuth();
   console.log(admin);
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);

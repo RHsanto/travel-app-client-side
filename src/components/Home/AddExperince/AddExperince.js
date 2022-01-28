@@ -1,6 +1,8 @@
 import axios from 'axios';
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import Footer from '../../Shared/Footer/Footer';
+import Navigation from '../../Shared/Navigation/Navigation';
 import './AddExperience.css'
 const AddExperince = () => {
   const { register, handleSubmit ,reset} = useForm();
@@ -19,7 +21,7 @@ const AddExperince = () => {
 };
   return (
    <>
- 
+ <Navigation/>
    <div className='add-packages'>
       <h1>Share Your Experience !</h1>
    <div className='container'>
@@ -45,7 +47,7 @@ const AddExperince = () => {
         
   </div>
   </div>
-
+<Footer/>
    </>
   );
 };
