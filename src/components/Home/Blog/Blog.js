@@ -1,14 +1,20 @@
 import React, { useState,useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './Blog.css'
+import Navigation from '../../Shared/Navigation/Navigation'
+import Footer from '../../Shared/Footer/Footer'
+
 const Blog = () => {
   const [blogs,setBlogs]=useState([])
 
  useEffect(()=>{
-  fetch('./blog.json')
+  fetch('http://localhost:5000/blogData')
   .then(res=>res.json())
   .then(data=> setBlogs(data))
  },[])
   return (
+    <>
+    <Navigation/>
 <div className='blog-section'>
 <div className="container ">
   <div className="blog-title my-5">
@@ -31,14 +37,9 @@ const Blog = () => {
     
     <div className="d-flex justify-content-between">
    
-     {/* <Rating className='text-warning'
-      emptySymbol="far fa-star "
-      fullSymbol="fas fa-star "
-      readonly
-      initialRating={blog.rating}
-      /> */}
+    
     </div>
-    <button className="btn read-more mt-4">Read more....</button>
+    <Link to={`/details/${blog._id}`}><button className="btn read-more mt-4">Read more....</button></Link>
    </div>
  </div>
      </div>
@@ -46,6 +47,9 @@ const Blog = () => {
   </div>
 </div>
     </div>
+    <Footer/>
+    </>
+
   );
 };
 

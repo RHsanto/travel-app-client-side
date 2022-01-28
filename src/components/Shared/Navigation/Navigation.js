@@ -6,7 +6,7 @@ const Navigation = () => {
   
   return (
     <div>
-  <div className="menubar ">
+  <div className="menubar shadow-lg ">
   <div className="container ">
       <div className="main-header">
         <div className="logo">
@@ -60,10 +60,13 @@ const Navigation = () => {
 
         <div className="authentic-section d-none d-md-block mt-3">
   
-         <Link to='/cart'>
+         <Link to='/dashboard'>
+         <button className="btn btn-warning me-4" >Dashboard</button>
+         </Link>
+         <Link to='/login'>
          <button className="btn btn-outline-info me-4" >Log in </button>
          </Link>
-         <Link to='/cart'>
+         <Link to='/signup'>
          <button className="btn btn-info" >Sign up <i class="fas fa-sign-in-alt"></i></button>
          </Link>
           </div>
