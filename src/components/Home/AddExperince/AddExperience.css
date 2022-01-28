@@ -1,0 +1,13 @@
+.add-packages{
+  margin-top: 50px;
+}
+.add-packages input{
+  display: block;
+  margin: 0 auto;
+  margin-top: 20px;
+  width: 50%;
+  padding: 10px ;
+  border-radius: 5px;
+  border: 0;
+  border: 1px solid;
+}

@@ -1,7 +1,13 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Offers.css'
 const Offers = () => {
+  const [offers,setOffers]=useState([]);
+  useEffect(()=>{
+    fetch('http://localhost:5000/offersData')
+    .then(res=>res.json())
+    .then(data=>setOffers(data))
+  })
   return (
     <div>
       <div className="offer-section">
@@ -14,45 +20,23 @@ const Offers = () => {
           pariatur ipsa commodi ipsam, quidem dolorum.</p>
           </div>
           <div className="row g-4">
-            <div 
-             className="col-lg-4 offers">
-            <Link to='/'>
-              <div className="discount">
-                <p>50% off</p>
-              </div>
-             <div className="offer-details">
-             <h2>Valencia</h2>
-              <p>$2990</p>
-             </div>
-             <img src="https://setsail.qodeinteractive.com/wp-content/uploads/2018/10/destinations-featured-img-4-650x650.jpg" alt="" />
-            </Link>
-            </div>
-            <div  className="col-lg-4 offers">
-              <Link to='/'>
-              <div className="discount">
-                <p>Special offer</p>
-              </div>
-           <div className="offer-details">
-           <h2>Varadero</h2>
-            <p>$2300</p>
-           </div>
-              <img src="https://setsail.qodeinteractive.com/wp-content/uploads/2018/10/destinations-featured-img-5-650x650.jpg" alt="" />
-              </Link>
-            </div>
-            <div
-            className="col-lg-4 offers">
-              <Link to='/'>
-              <div className="discount">
-                <p>60% off</p>
-              </div>
-           <div className="offer-details ">
-           <h2>Italy Tour</h2>
-            <p>$2550</p>
-           </div>
-              <img src="https://setsail.qodeinteractive.com/wp-content/uploads/2018/10/destinations-featured-img-6-650x650.jpg" alt="" />
-            
-              </Link>
-            </div>
+            {offers.map(offer=>
+                <div 
+                className="col-lg-4 offers">
+               <Link to={`/offer-details/${offer._id}`}>
+                 <div className="discount">
+                   <p>{offer.discount}% off</p>
+                 </div>
+                <div className="offer-details">
+                <h2>{offer.title}</h2>
+                 <p>${offer.expense}</p>
+                </div>
+                <img src={offer.img} alt="" />
+               </Link>
+               </div>
+              
+              )}
+         
           </div>
         </div>
 

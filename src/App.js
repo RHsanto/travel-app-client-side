@@ -8,11 +8,17 @@ import Login from './components/Home/Register/Login';
 import Details from './components/Home/Details/Details';
 import Dashboard from './components/Home/Dashboard/Dashboard';
 import NotFound from './components/NotFound/NotFound';
+import OffersDetails from './components/Home/Details/OffersDetails';
+import AddExperince from './components/Home/AddExperince/AddExperince';
+import AuthProvider from './Context/AuthProvider';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import AllOrders from './components/Home/Dashboard/AllOrders/AllOrders';
 
 function App() {
   return (
     <div className="App">
-      <Router>
+    <AuthProvider>
+    <Router>
       <Switch>
        <Route exact path='/'>
        <Home/>
@@ -20,30 +26,37 @@ function App() {
        <Route path='/home'>
        <Home/>
        </Route>
-       <Route path='/details/:id'>
+       <PrivateRoute path='/details/:id'>
        <Details/>
-       </Route>
-       <Route path='/blog'>
+       </PrivateRoute>
+       <PrivateRoute path='/offer-details/:id'>
+         <OffersDetails/>
+       </PrivateRoute>
+       <PrivateRoute path='/blog'>
        <Blog/>
+       </PrivateRoute>
+       <Route path='/addExperince'>
+         <AddExperince/>
        </Route>
        <Route path='/login'>
          <Login/>
        </Route>
-       <Route path='/signup'>
+       <Route path='/signin'>
          <SignUp/>
        </Route>
        <Route  path='/dashboard'>
          <Dashboard/>
        </Route>
-       {/* <Route path='/dashboard'>
-         <MainDash/>
-       </Route> */}
+       <Route path='/all-orders'>
+         <AllOrders/>
+       </Route>
 
        <Route path='*'>
          <NotFound/>
        </Route>
       </Switch>
     </Router>
+    </AuthProvider>
    
     </div>
   );

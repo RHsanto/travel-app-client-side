@@ -1,0 +1,7 @@
+.booking-form input,textarea, .order-select{
+  margin: 10px auto;
+  display: block;
+  width: 100%;
+  padding: 10px 5px;
+  
+}

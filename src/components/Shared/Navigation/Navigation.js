@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import useAuth from '../../../hooks/useAuth';
 import './Navigation.css'
+import AssignmentIcon from '@mui/icons-material/Assignment';
 const Navigation = () => {
-
+  const {user,logOut}=useAuth();
   
   return (
     <div>
@@ -25,13 +27,7 @@ const Navigation = () => {
               <NavLink  style={isActive => ({
                color: isActive ? "#31D2F2" : "black"
                })}  to='/blog'><li>Blog</li></NavLink>
-              <NavLink  style={isActive => ({
-               color: isActive ? "#31D2F2" : "black"
-               })}  to='/about'><li>About</li></NavLink>
-              <NavLink  style={isActive => ({
-               color: isActive ? "#31D2F2" : "black"
-               })}  to='/contact'><li>Contact</li></NavLink>
-
+             
             </ul>
           </nav>
        
@@ -49,8 +45,39 @@ const Navigation = () => {
         <>
               <NavLink to='/home'><li>Home</li></NavLink>
               <NavLink to='/blog'><li>Blog</li></NavLink>
-              <NavLink to='/about'><li>About</li></NavLink>
-              <NavLink to='/contact'><li>Contact</li></NavLink>
+              <div className="authentic-section  mt-3">
+  
+   <>
+   {
+  
+  user.email ? 
+  <>
+ 
+  <div className="dropdown ">
+    <button className="btn btn-info  dropdown-toggle mx-2" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+     <span className=' name'>{user.displayName}</span>
+   </button>
+   <ul className="dropdown-menu mt-2 " aria-labelledby="dropdownMenuButton1">
+   <img className=' rounded-circle  w-50 ms-5' src={user.photoURL}alt="img" />
+       <Link to='/dashboard'><li className='text-dark items text-center'><AssignmentIcon/> Dashboard</li></Link>
+      <button onClick={logOut}  className="btn btn-outline-danger  w-100"><i className="fas fa-sign-out-alt"></i> logout</button>
+    </ul>
+  </div>
+ 
+  
+  </>
+   :
+   
+   <Link to ='/signin'>
+     <button className='btn btn-primary  '>
+       Sign In 
+       <i className="fas fa-sign-in-alt ms-2">
+         </i></button></Link>
+}
+   </>
+
+    </div>
+             
             </>
         </ul>
       
@@ -59,16 +86,35 @@ const Navigation = () => {
         </div>
 
         <div className="authentic-section d-none d-md-block mt-3">
-  
-         <Link to='/dashboard'>
-         <button className="btn btn-warning me-4" >Dashboard</button>
-         </Link>
-         <Link to='/login'>
-         <button className="btn btn-outline-info me-4" >Log in </button>
-         </Link>
-         <Link to='/signup'>
-         <button className="btn btn-info" >Sign up <i class="fas fa-sign-in-alt"></i></button>
-         </Link>
+         <>
+         {
+        
+        user.email ? 
+        <>
+       
+        <div className="dropdown ">
+          <button className="btn   dropdown-toggle mx-2" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+           <span className=' name'>{user.email}</span>
+         </button>
+         <ul className="dropdown-menu mt-2 " aria-labelledby="dropdownMenuButton1">
+         <img className=' rounded-circle  w-50 ms-5' src={user.photoURL}alt="img" />
+             <Link to='/dashboard'><li className='text-dark items text-center'><AssignmentIcon/> Dashboard</li></Link>
+            <button onClick={logOut}  className="btn btn-outline-danger  w-100"><i className="fas fa-sign-out-alt"></i> logout</button>
+          </ul>
+        </div>
+       
+        
+        </>
+         :
+         
+         <Link to ='/login'>
+           <button className='btn btn-info '>
+             Log In 
+             <i className="fas fa-sign-in-alt ms-2">
+               </i></button></Link>
+      }
+         </>
+     
           </div>
         {/* <!-- end of main-header  --> */}
       </div>

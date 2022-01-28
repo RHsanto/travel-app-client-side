@@ -1,0 +1,39 @@
+[
+  {"img":"https://setsail.qodeinteractive.com/wp-content/uploads/2018/10/destinations-featured-img-4-650x650.jpg",
+  "title":"Valencia",
+  "expense":"8000",
+  "description":" Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo.",
+  "date":"25 may 2021",
+  "departure-Time":"9.30 AM",
+  "return-Time":"12.00 pm",
+  "location":"australia",
+  "rating":"4.5",
+  "discount":"50"
+},
+  {"img":"https://setsail.qodeinteractive.com/wp-content/uploads/2018/10/destinations-featured-img-5-650x650.jpg",
+  "title":"Varadero",
+  "expense":"9000",
+  "description":" Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo.",
+  "date":"20 Feb 2022",
+  "departure-Time":"7.30 AM",
+  "return-Time":"10.00 pm",
+  "location":"spain",
+  "rating":"5",
+  "discount":"40"
+}
+,
+  {"img":"https://setsail.qodeinteractive.com/wp-content/uploads/2018/10/destinations-featured-img-6-650x650.jpg",
+  "title":"Italy Tour",
+  "expense":"5600",
+  "description":" Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo.",
+  "date":"10 Mar 2022",
+  "departure-Time":"2.30 AM",
+  "return-Time":"8.00 pm",
+  "location":"Italy",
+  "rating":"5",
+  "discount":"60"
+}
+
+
+
+]

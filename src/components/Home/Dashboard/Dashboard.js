@@ -22,12 +22,16 @@ import {
 } from "react-router-dom";
 import './Dashboard.css'
 import MakeAdmin from './MakeAdmin/MakeAdmin';
-import AddBlog from './AddBlog/AddBlog';
 import Addoffer from './Addoffer/Addoffer';
+import AddExperince from '../AddExperince/AddExperince';
+import useAuth from '../../../hooks/useAuth';
+import AllOrders from './AllOrders/AllOrders';
 
 const drawerWidth = 240;
 
 function Dashboard(props) {
+  const {user,logOut,admin}= useAuth();
+  console.log(admin);
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
   let { path, url } = useRouteMatch();
@@ -39,24 +43,49 @@ function Dashboard(props) {
   const drawer = (
     <div>
       <Toolbar />
+      <span >
+             <i class="fas fa-user-circle fs-1 text-primary admin"></i>
+             <p className='mt-2 mb-5'>{user?.email}</p>
+      </span>
       <Divider />
       <List>
        <div div className='dash-nav text-start'> 
+
+       {admin && 
+        <>
+        <Link to='/'> <li> <HomeIcon /> Home</li> </Link>
+        <Link to={`${url}`}><li><AssignmentIcon/> Dashboard</li></Link>
+        <Link to={`${url}/addExperince`}><li><AddBoxIcon/> Add Experience</li></Link>
+       <Link to='/dashboard/my-orders'><li><i class="fas fa-clipboard"></i>My Orders</li></Link>
+       
+        </>
+          
+            }
+            {!admin && 
+                <>
+                 <Link to='/'> <li> <i class="fas fa-house-user"></i> Home</li> </Link>
+                 <Link to='/dashboard'><li><i class="fas fa-clipboard"></i> Dashboard</li></Link>
+                 <Link to={`${url}/all-orders`}><li><i class="fas fa-shopping-cart"></i>  all orders</li></Link>
+                 <Link to={`${url}/makeAdmin`}><li><GroupAddIcon/> Make Admin</li></Link>
+                 <Link to={`${url}/addOffer`}><li><AddBoxIcon/> Add Offer</li></Link>
+                 </>
+            }
+        
       
-           <>
+           {/* <>
            <Link to='/'> <li> <HomeIcon /> Home</li> </Link>
             <Link to={`${url}`}><li><AssignmentIcon/> Dashboard</li></Link>
-            <Link to={`${url}/addBlog`}><li><AddBoxIcon/> Add Experience</li></Link>
+            <Link to={`${url}/addExperince`}><li><AddBoxIcon/> Add Experience</li></Link>
             <Link to={`${url}/makeAdmin`}><li><GroupAddIcon/> Make Admin</li></Link>
            </>
            <Divider />
            <>
            <Link to='/'> <li> <HomeIcon /> Home</li> </Link>
             <Link to={`${url}`}><li><AssignmentIcon/> Dashboard</li></Link>
-            <Link to={`${url}/addBlog`}><li><AddBoxIcon/> Add Experience</li></Link>
+            <Link to={`${url}/addExperince`}><li><AddBoxIcon/> Add Experience</li></Link>
             <Link to={`${url}/addOffer`}><li><AddBoxIcon/> Add Offer</li></Link>
             <Link to={`${url}/makeAdmin`}><li><GroupAddIcon/> Make Admin</li></Link>
-           </>
+           </> */}
        </div>
       </List>
       <Divider />
@@ -135,11 +164,14 @@ function Dashboard(props) {
         <Route path={`${path}/makeAdmin`}>
         <MakeAdmin/>
         </Route>
-        <Route path={`${path}/addBlog`}>
-        <AddBlog/>
+        <Route path={`${path}/addExperince`}>
+        <AddExperince/>
         </Route>
         <Route path={`${path}/addOffer`}>
         <Addoffer/>
+        </Route>
+        <Route path={`${path}/all-orders`}>
+        <AllOrders/>
         </Route>
       </Switch>
        
