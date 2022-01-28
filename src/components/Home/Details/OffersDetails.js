@@ -23,7 +23,7 @@ const OffersDetails = () => {
    data.status ="pending";
 console.log(data);
   //  here post order
-    axios.post('http://localhost:5000/addBooking',data)
+    axios.post('https://secure-dawn-80151.herokuapp.com/addBooking',data)
     .then(res =>{
       if(res.data.insertedId){
         alert('Order Successful');
@@ -33,7 +33,7 @@ console.log(data);
   };
 
 useEffect(()=>{
- fetch(`http://localhost:5000/offersData/${id}`)
+ fetch(`https://secure-dawn-80151.herokuapp.com/offersData/${id}`)
 .then(res=>res.json())
 .then(data=>setOrder(data))
   })

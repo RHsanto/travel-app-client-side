@@ -11,7 +11,7 @@ const Details = () => {
   const [order,setOrder]=useState([])
 
   useEffect(()=>{
-fetch(`http://localhost:5000/blogData/${id}`)
+fetch(`https://secure-dawn-80151.herokuapp.com/blogData/${id}`)
 .then(res=>res.json())
 .then(data=>setOrder(data))
   })

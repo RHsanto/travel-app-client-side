@@ -4,7 +4,7 @@ import './Offers.css'
 const Offers = () => {
   const [offers,setOffers]=useState([]);
   useEffect(()=>{
-    fetch('http://localhost:5000/offersData')
+    fetch('https://secure-dawn-80151.herokuapp.com/offersData')
     .then(res=>res.json())
     .then(data=>setOffers(data))
   })

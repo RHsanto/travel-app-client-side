@@ -6,7 +6,7 @@ const AllOrders = () => {
  
 
   useEffect(()=>{
-    fetch('http://localhost:5000/allBooking')
+    fetch('https://secure-dawn-80151.herokuapp.com/allBooking')
     .then(res=> res.json())
     .then(data=> setAllOrders(data))
     
@@ -14,7 +14,7 @@ const AllOrders = () => {
 
    // here orders status update
     const updateOrders = id=>{
-      const url = `http://localhost:5000/allBooking/${id}`
+      const url = `https://secure-dawn-80151.herokuapp.com/allBooking/${id}`
       fetch(url,{
         method: "PUT",
         headers: {"content-type": "application/json"},
@@ -33,7 +33,7 @@ const AllOrders = () => {
        const handleDelete = id =>{
         const proceed = window.confirm('Are you sure , you want to delete ?');
         if(proceed){
-          const url =`http://localhost:5000/allBooking/${id}`
+          const url =`https://secure-dawn-80151.herokuapp.com/allBooking/${id}`
           fetch(url,{
               method: 'DELETE'
       

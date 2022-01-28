@@ -9,7 +9,7 @@ const AddExperince = () => {
 
   const onSubmit = data => {
     console.log(data);
-    axios.post('http://localhost:5000/addExperience',data)
+    axios.post('https://secure-dawn-80151.herokuapp.com/addExperience',data)
     .then(res =>{
       console.log(res);
       if(res.data.insertedId){

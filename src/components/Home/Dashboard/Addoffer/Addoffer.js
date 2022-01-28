@@ -7,7 +7,7 @@ const Addoffer = () => {
 
   const onSubmit = data => {
     console.log(data);
-    axios.post('http://localhost:5000/offersData',data)
+    axios.post('https://secure-dawn-80151.herokuapp.com/offersData',data)
     .then(res =>{
       console.log(res);
       if(res.data.insertedId){
