@@ -12,7 +12,7 @@ const Home = () => {
   useEffect(()=>{
     fetch('https://secure-dawn-80151.herokuapp.com/blogData')
     .then(res=>res.json())
-    .then(data=> setBlogs(data.slice(0,6)))
+    .then(data=> setBlogs(data.offers.slice(0,6)))
    },[])
   return (
     <div >

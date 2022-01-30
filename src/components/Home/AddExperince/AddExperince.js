@@ -8,8 +8,9 @@ const AddExperince = () => {
   const { register, handleSubmit ,reset} = useForm();
 
   const onSubmit = data => {
+    data.status ="pending";
     console.log(data);
-    axios.post('https://secure-dawn-80151.herokuapp.com/addExperience',data)
+    axios.post('https://secure-dawn-80151.herokuapp.com/addBooking',data)
     .then(res =>{
       console.log(res);
       if(res.data.insertedId){

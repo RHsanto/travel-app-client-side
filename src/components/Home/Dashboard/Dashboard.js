@@ -14,6 +14,7 @@ import HomeIcon from '@mui/icons-material/Home';
 import AssignmentIcon from '@mui/icons-material/Assignment';
 import AddBoxIcon from '@mui/icons-material/AddBox';
 import GroupAddIcon from '@mui/icons-material/GroupAdd';
+import BallotIcon from '@mui/icons-material/Ballot';
 import {
   Switch,
   Route,
@@ -26,6 +27,8 @@ import Addoffer from './Addoffer/Addoffer';
 import AddExperince from '../AddExperince/AddExperince';
 import useAuth from '../../../hooks/useAuth';
 import AllOrders from './AllOrders/AllOrders';
+import MyOrders from './MyOrders/MyOrders';
+import AllPost from './AllPost/AllPost';
 
 const drawerWidth = 240;
 
@@ -51,21 +54,22 @@ function Dashboard(props) {
       <List>
        <div div className='dash-nav text-start'> 
 
-       {admin && 
+       {!admin && 
         <>
         <Link to='/'> <li> <HomeIcon /> Home</li> </Link>
         <Link to={`${url}`}><li><AssignmentIcon/> Dashboard</li></Link>
         <Link to={`${url}/addExperince`}><li><AddBoxIcon/> Add Experience</li></Link>
-       <Link to='/dashboard/my-orders'><li><i class="fas fa-clipboard"></i>My Orders</li></Link>
+       {/* <Link to={`${url}/my-orders`}><li><i class="fas fa-clipboard"></i>My Orders</li></Link> */}
        
         </>
           
             }
-            {!admin && 
+            {admin && 
                 <>
                  <Link to='/'> <li> <i class="fas fa-house-user"></i> Home</li> </Link>
                  <Link to='/dashboard'><li><i class="fas fa-clipboard"></i> Dashboard</li></Link>
-                 <Link to={`${url}/all-orders`}><li><i class="fas fa-shopping-cart"></i>  all orders</li></Link>
+                 {/* <Link to={`${url}/all-orders`}><li><i class="fas fa-shopping-cart"></i>  all orders</li></Link> */}
+                 <Link to={`${url}/all-post`}><li><BallotIcon/>  all Post</li></Link>
                  <Link to={`${url}/makeAdmin`}><li><GroupAddIcon/> Make Admin</li></Link>
                  <Link to={`${url}/addOffer`}><li><AddBoxIcon/> Add Offer</li></Link>
                  </>
@@ -172,6 +176,12 @@ function Dashboard(props) {
         </Route>
         <Route path={`${path}/all-orders`}>
         <AllOrders/>
+        </Route>
+        <Route path={`${path}/my-orders`}>
+        <MyOrders/>
+        </Route>
+        <Route path={`${path}/all-post`}>
+        <AllPost/>
         </Route>
       </Switch>
        

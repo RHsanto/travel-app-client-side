@@ -10,7 +10,7 @@ const Blog = () => {
  useEffect(()=>{
   fetch('https://secure-dawn-80151.herokuapp.com/blogData')
   .then(res=>res.json())
-  .then(data=> setBlogs(data))
+  .then(data=> setBlogs(data.offers))
  },[])
   return (
     <>

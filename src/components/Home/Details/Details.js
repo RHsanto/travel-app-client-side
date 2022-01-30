@@ -15,7 +15,7 @@ fetch(`https://secure-dawn-80151.herokuapp.com/blogData/${id}`)
 .then(res=>res.json())
 .then(data=>setOrder(data))
   })
-  return (
+  return (     
     <div>
       <Navigation/>
     <div className="container mt-5">

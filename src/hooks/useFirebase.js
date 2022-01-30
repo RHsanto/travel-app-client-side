@@ -27,7 +27,7 @@ const useFirebase = () => {
    })
   }
 
-  useEffect(()=>{
+useEffect(()=>{
 fetch(`https://secure-dawn-80151.herokuapp.com/users/${user.email}`)
 .then(res=>res.json())
 .then(data =>setAdmin(data.admin))

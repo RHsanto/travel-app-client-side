@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+
 import './Offers.css'
 const Offers = () => {
   const [offers,setOffers]=useState([]);
   useEffect(()=>{
     fetch('https://secure-dawn-80151.herokuapp.com/offersData')
     .then(res=>res.json())
-    .then(data=>setOffers(data))
+    .then(data=>setOffers(data.slice(0,3)))
   })
   return (
     <div>
@@ -23,7 +23,7 @@ const Offers = () => {
             {offers.map(offer=>
                 <div 
                 className="col-lg-4 offers">
-               <Link to={`/offer-details/${offer._id}`}>
+               <>
                  <div className="discount">
                    <p>{offer.discount}% off</p>
                  </div>
@@ -32,7 +32,7 @@ const Offers = () => {
                  <p>${offer.expense}</p>
                 </div>
                 <img src={offer.img} alt="" />
-               </Link>
+               </>
                </div>
               
               )}
